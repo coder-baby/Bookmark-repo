@@ -1,0 +1,118 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-color:#fff1f1;
+    --prim-color:#7171db;
+    --sec-color:#1d861d;
+    --light:white;
+    --dark:black;
+    --transform:capitalize;
+    --rad:8px;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+main{
+    margin: 20px 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tite{
+    width: 70%;
+    text-transform: var(--transform);
+    margin-bottom: 20px;
+}
+.tite p{
+    position: relative;
+    left: 0.2rem;
+}
+
+ 
+.center{
+    background-color: var(--main-color);
+    width: 70%;
+    min-height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cen{
+    text-transform: var(--transform);
+}
+label{
+    text-transform: var(--transform);
+    text-align: center;
+
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;   
+}
+
+form input{
+    width: 70%;
+}
+form div{
+    text-align: center;
+    margin-top: 20px;
+}
+button[type='submit']{
+    background-color: var(--prim-color);
+    color: var(--light);
+    border: none;
+    padding: 10px 20px;
+    margin: 30px auto;
+    position: relative;
+    bottom: 10px;
+    border-radius: var(--rad);
+}
+.second{
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+.dem{
+    width: 70%;
+    height: 0.2%;
+    background-color: green;
+    position: relative;
+    bottom: 10px;
+}
+
+.sites{
+    display: flex;
+    justify-content: center;
+    text-transform: var(--transform);
+    background-color: var(--main-color);
+    width: 70%;
+    margin: 6px;
+}
+.sites button{
+    text-transform: var(--transform);
+    width: 4rem;
+    height: 2rem;
+    position: relative;
+    top: 0.9rem;
+    left: 2rem;
+    margin: 2px;
+    border-radius: var(--rad);
+}
+.delete{
+    background-color: var(--sec-color);
+    border: none;
+    color: var(--light);
+    
+}
