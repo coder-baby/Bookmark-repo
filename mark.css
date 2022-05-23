@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;500;800&display=swap');
+*{
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 1px;
+}
 html,body{
     margin: 0;
     padding: 0;
@@ -29,14 +34,12 @@ main{
 .tite{
     width: 70%;
     text-transform: var(--transform);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .tite p{
     position: relative;
     left: 0.2rem;
 }
-
- 
 .center{
     background-color: var(--main-color);
     width: 70%;
@@ -51,7 +54,6 @@ main{
 label{
     text-transform: var(--transform);
     text-align: center;
-
 }
 form{
     width: 100%;
@@ -87,9 +89,12 @@ button[type='submit']{
 .dem{
     width: 70%;
     height: 0.2%;
-    background-color: green;
+    background-color: #d0e8f0;
     position: relative;
-    bottom: 10px;
+    bottom: 20px;
+}
+input::placeholder{
+    text-transform: var(--transform);
 }
 
 .sites{
