@@ -4,11 +4,18 @@ form.addEventListener('submit',saveBookmark)
 
 function saveBookmark(e){
     e.preventDefault()
+
     let siteName=document.getElementById('name').value;
     let siteUrl=document.getElementById('url').value;
 
+    if(!siteName || !siteUrl){
+        alert('empty')
+        return false;
+    }
+    
+
     let bookMark={
-        name:siteName,
+        site:siteName,
         url:siteUrl
     }
     
@@ -34,10 +41,47 @@ function saveBookmark(e){
         // we set it 
         localStorage.setItem('bookmarks',JSON.stringify(bookmarks))
     }
+    fetchBookmarks()
+    // clearInput() 
+    document.querySelector('form').reset()   
+}
+
+// delete bookmark
+function deleteMark(url){
+    let bookmarks=JSON.parse(localStorage.getItem('bookmarks'))
+
+    bookmarks.forEach((mark,i)=>{
+        if(mark.url===url){
+            bookmarks.splice(i,1)
+        }
+    })
+    localStorage.setItem('bookmarks',JSON.stringify(bookmarks))
+
+    fetchBookmarks()
 }
 
 // fetch the bookmarks
 function fetchBookmarks(){
-    console.log(JSON.parse(localStorage.getItem('bookmarks')))
+    let bookmarks=JSON.parse(localStorage.getItem('bookmarks'))
 
+    let result=document.querySelector('.second')
+    result.innerHTML=''
+
+    bookmarks.forEach(mark=>{
+        result.innerHTML+=`
+        <article class="sites">
+                <h3>${mark.site}</h3>
+
+                <a class="visit" target="_blank" href="http://${mark.url}">visit</a>
+
+                <a onclick="deleteMark('${mark.url}')" class="delete" href="#">delete</a>
+            </article>     
+            `
+    })
+
+}
+
+function clearInput(){
+    document.getElementById('name').value=' ';
+    document.getElementById('url').value=' ';
 }
